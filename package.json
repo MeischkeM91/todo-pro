@@ -1,0 +1,28 @@
+{
+  "name": "todo-pro",
+  "version": "1.0.0",
+  "description": "To-Do List and Project Manager",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "serve": "webpack serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MeischkeM91/todo-pro.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MeischkeM91/todo-pro/issues"
+  },
+  "homepage": "https://github.com/MeischkeM91/todo-pro#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.8.1"
+  }
+}
