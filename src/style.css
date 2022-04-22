@@ -27,7 +27,7 @@ body{
 #topbar{
     grid-area: topbarDiv;
     display: grid;
-    grid-template-columns: auto 3fr repeat(2,1fr);
+    grid-template-columns: auto 5fr repeat(2,1fr);
     background-color: var(--dark-blue);
     width: 100vw;
 }
@@ -81,6 +81,22 @@ body{
     align-self: center;
     padding-left: 15px;
     text-shadow: 1px 1px 2px black;
+}
+/** Account Username Display **/
+.username-display{
+    justify-self: end;
+    align-self: center;
+    background-color: var(--soft-blue);
+    padding: 5px 20px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 50px;
+    font-weight: 500;
+}
+.username-display:hover{
+    background-color: #b6d2e3;
+}
+.username-display:active{
+    transform: translate(1px, 1px);
 }
 /***********
 **  MENU  **
