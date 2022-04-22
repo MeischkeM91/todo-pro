@@ -12,7 +12,7 @@ const createMenuBtn = () =>{
     // Menu btn
     const menuBtn = document.createElement('div');
     menuBtn.classList.add('menu-btn');    
-
+    // Update status of Menu btn
     menuBtnContainer.addEventListener('click', ()=>{
         if(!menuOpen){
             menuBtnContainer.classList.add('open');
@@ -24,13 +24,20 @@ const createMenuBtn = () =>{
             console.log(menuOpen);
         };
       });
-
     topbar.appendChild(menuBtnContainer);
     menuBtnContainer.appendChild(menuBtn);
 };
 
+const addLogo = () =>{
+    const logo = document.createElement('div');
+    logo.classList.add('top-logo');
+    logo.innerText = 'ToDo Pro';
+    topbar.appendChild(logo);
+};
+
 const createTopbar = () =>{
     createMenuBtn();
+    addLogo();
 };
 export default function loadTopbar() {
     createTopbar();
