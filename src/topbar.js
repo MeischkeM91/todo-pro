@@ -3,7 +3,7 @@
 const topbar = document.querySelector('#topbar');
 const menu = document.querySelector('#menu');
 const content = document.querySelector('#content');
-
+let menuOpen = true;
 
 const createMenuBtn = () =>{
     // Container for btn
@@ -13,12 +13,25 @@ const createMenuBtn = () =>{
     const menuBtn = document.createElement('div');
     menuBtn.classList.add('menu-btn');    
 
+    menuBtnContainer.addEventListener('click', ()=>{
+        if(!menuOpen){
+            menuBtnContainer.classList.add('open');
+            menuOpen=true;
+            console.log(menuOpen);
+        } else{
+            menuBtnContainer.classList.remove('open');
+            menuOpen=false;
+            console.log(menuOpen);
+        };
+      });
+
     topbar.appendChild(menuBtnContainer);
     menuBtnContainer.appendChild(menuBtn);
 };
 
-
-
+const createTopbar = () =>{
+    createMenuBtn();
+};
 export default function loadTopbar() {
     createTopbar();
 };
