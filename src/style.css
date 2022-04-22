@@ -13,5 +13,25 @@
     font-family: var(--raleway);
 }
 body{
+    display: grid;
+    grid-template-rows: 8vh 92vh;
+    grid-template-columns: 220px 4fr;
+    grid-template-areas: 
+    'topbarDiv topbarDiv'
+    'menuDiv contentDiv';
     background: var(--soft-blue);
+}
+#topbar{
+    grid-area: topbarDiv;
+    background-color: var(--dark-blue);
+    width: 100vw;
+}
+#menu{
+    grid-area: menuDiv;
+    background-color: var(--soft-brown);
+    height: 92vh;
+}
+#content{
+    grid-area: contentDiv;
+    background-color: var(--soft-blue);
 }
