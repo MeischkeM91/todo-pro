@@ -35,9 +35,18 @@ const addLogo = () =>{
     topbar.appendChild(logo);
 };
 
+let accUsername = 'Maximilian12';
+const displayAccount = (username) =>{
+    const usernameDisplay = document.createElement('div');
+    usernameDisplay.classList.add('username-display');
+    usernameDisplay.innerText=username;
+    topbar.appendChild(usernameDisplay);
+};
+
 const createTopbar = () =>{
     createMenuBtn();
     addLogo();
+    displayAccount(accUsername);
 };
 export default function loadTopbar() {
     createTopbar();
