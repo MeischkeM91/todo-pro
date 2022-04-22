@@ -30,8 +30,10 @@ body{
     grid-area: menuDiv;
     background-color: var(--soft-brown);
     height: 92vh;
+    border-right: 1px solid var(--dark-brown);
 }
 #content{
     grid-area: contentDiv;
     background-color: var(--soft-blue);
+    box-shadow: inset 1px 0px 6px black;
 }
