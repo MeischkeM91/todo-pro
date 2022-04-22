@@ -21,17 +21,68 @@ body{
     'menuDiv contentDiv';
     background: var(--soft-blue);
 }
+/***********
+** TOPBAR **
+***********/
 #topbar{
     grid-area: topbarDiv;
     background-color: var(--dark-blue);
     width: 100vw;
 }
+/** Menu Expand Btn **/
+.menu-btn-container{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    width:80px;
+    height:80px; 
+    cursor: pointer; 
+    transition: all .5s ease-in-out;
+}
+.menu-btn{
+    width:40px;
+    height:5px;
+    background: white;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+.menu-btn::before,
+.menu-btn::after{
+  content:'';
+  position: absolute;
+  width:40px;
+  height:5px;
+  background: white;
+  border-radius:5px;
+  transition: all .5s ease-in-out;
+}
+.menu-btn::before{
+  transform: translateY(-14px);
+}
+.menu-btn::after{
+  transform: translateY(14px);
+}
+.menu-btn-container.open .menu-btn{
+  background: transparent;
+}
+.menu-btn-container.open .menu-btn::before{
+  transform: rotate(45deg) ;
+}
+.menu-btn-container.open .menu-btn::after{
+  transform: rotate(-45deg);
+}
+/***********
+**  MENU  **
+***********/
 #menu{
     grid-area: menuDiv;
     background-color: var(--soft-brown);
     height: 92vh;
     border-right: 1px solid var(--dark-brown);
 }
+/*****************
+** PAGE CONTENT **
+*****************/
 #content{
     grid-area: contentDiv;
     background-color: var(--soft-blue);
