@@ -43,10 +43,36 @@ const displayAccount = (username) =>{
     topbar.appendChild(usernameDisplay);
 };
 
+const createThemeList = () =>{
+    const themeContainer = document.createElement('div');
+    topbar.appendChild(themeContainer);
+    const themeList = document.createElement('select');
+    themeList.classList.add('theme-list');
+    const sandyBeachTheme = document.createElement('option');
+    sandyBeachTheme.classList.add('theme-list-item');
+    sandyBeachTheme.value = 'sandyBeach';
+    sandyBeachTheme.innerText = 'Sandy Beach';
+    const nightMoonTheme = document.createElement('option');
+    nightMoonTheme.classList.add('theme-list-item');
+    nightMoonTheme.value = 'nightMoon';
+    nightMoonTheme.innerText = 'Night Moon';
+    const lushForestTheme = document.createElement('option');
+    lushForestTheme.classList.add('theme-list-item');
+    lushForestTheme.value = 'lushForest';
+    lushForestTheme.innerText = 'Lush Forest';
+
+    themeContainer.appendChild(themeList);
+    themeList.appendChild(sandyBeachTheme);
+    themeList.appendChild(nightMoonTheme);
+    themeList.appendChild(lushForestTheme);
+
+};
+
 const createTopbar = () =>{
     createMenuBtn();
     addLogo();
     displayAccount(accUsername);
+    createThemeList();
 };
 export default function loadTopbar() {
     createTopbar();
