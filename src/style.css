@@ -22,7 +22,7 @@
 }
 body{
     display: grid;
-    grid-template-rows: 8vh 92vh;
+    grid-template-rows: 9vh 91vh;
     grid-template-columns: 220px 4fr;
     grid-template-areas: 
     'topbarDiv topbarDiv'
@@ -142,7 +142,6 @@ body{
 }
 
 
-
 /*****************
 ** Theme Colors **
 *****************/
@@ -164,10 +163,10 @@ body{
 #topbar.night-moon > .username-display:hover{
     background-color: #d2a7db;
 }
-#topbar.night-moon > .theme-list{    
+#topbar.night-moon  .theme-list{    
     background-color: var(--night-pink);
 }
-#topbar.night-moon > .theme-list:hover{
+#topbar.night-moon  .theme-list:hover{
     background-color: #d2a7db;
 }
 /**** Lush Forest Theme ****/
