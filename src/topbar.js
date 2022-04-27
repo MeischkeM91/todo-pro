@@ -45,28 +45,40 @@ const displayAccount = (username) =>{
 
 const createThemeList = () =>{
     const themeContainer = document.createElement('div');
+    themeContainer.classList.add('theme-container');
+    themeContainer.setAttribute('id','theme-container')
     topbar.appendChild(themeContainer);
     const themeList = document.createElement('select');
     themeList.classList.add('theme-list');
     const sandyBeachTheme = document.createElement('option');
     sandyBeachTheme.classList.add('theme-list-item');
-    sandyBeachTheme.value = 'sandyBeach';
+    sandyBeachTheme.value = 'sandy-beach';
     sandyBeachTheme.innerText = 'Sandy Beach';
     const nightMoonTheme = document.createElement('option');
     nightMoonTheme.classList.add('theme-list-item');
-    nightMoonTheme.value = 'nightMoon';
+    nightMoonTheme.value = 'night-moon';
     nightMoonTheme.innerText = 'Night Moon';
     const lushForestTheme = document.createElement('option');
     lushForestTheme.classList.add('theme-list-item');
-    lushForestTheme.value = 'lushForest';
+    lushForestTheme.value = 'lush-forest';
     lushForestTheme.innerText = 'Lush Forest';
 
+    themeContainer.addEventListener('change', () =>{
+        topbar.classList = '';
+        topbar.classList = themeList.value;
+        menu.classList = '';
+        menu.classList = themeList.value;        
+        content.classList = '';
+        content.classList = themeList.value;
+    })
     themeContainer.appendChild(themeList);
     themeList.appendChild(sandyBeachTheme);
     themeList.appendChild(nightMoonTheme);
     themeList.appendChild(lushForestTheme);
 
 };
+
+
 
 const createTopbar = () =>{
     createMenuBtn();
