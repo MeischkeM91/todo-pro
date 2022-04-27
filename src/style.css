@@ -5,6 +5,14 @@
     --dark-blue: #6F8C9E;
     --soft-brown: #EAE0D2;
     --dark-brown: #9E917E;
+    --midnight-violet: #4D4E66;
+    --moonlit-purple: #9889AB;
+    --night-pink: #D9B5E0;
+    --deep-midnight: #1B2129;
+    --canopy-green: #21401D;
+    --lush-green: #94A37E;
+    --earthy-brown: #7D745E;
+    --lastleaf-brown: #AA9D7F;
     --raleway: 'Raleway', sans-serif;
 }
 *{
@@ -131,4 +139,58 @@ body{
     grid-area: contentDiv;
     background-color: var(--soft-blue);
     box-shadow: inset 1px 0px 6px black;
+}
+
+
+
+/*****************
+** Theme Colors **
+*****************/
+/**** Night Moon Theme ****/
+#menu.night-moon{
+    background-color: var(--midnight-violet);
+    border-right: 1px solid #9889AB;
+}
+#topbar.night-moon{
+    background-color: var(--moonlit-purple);
+}
+#content.night-moon{
+    background-color: var(--deep-midnight);
+    box-shadow: inset 1px 0px 6px  #9889AB;
+}
+#topbar.night-moon > .username-display{
+    background-color: var(--night-pink);
+}
+#topbar.night-moon > .username-display:hover{
+    background-color: #d2a7db;
+}
+#topbar.night-moon > .theme-list{    
+    background-color: var(--night-pink);
+}
+#topbar.night-moon > .theme-list:hover{
+    background-color: #d2a7db;
+}
+/**** Lush Forest Theme ****/
+#menu.lush-forest{
+    background-color: var(--lastleaf-brown);
+    border-right: 1px solid var(--earthy-brown);
+}
+#topbar.lush-forest{
+    background-color: var(--canopy-green);
+}
+#content.lush-forest{
+    background-color: var(--lush-green);
+    box-shadow: inset 1px 0px 6px  var(--earthy-brown);
+}
+#topbar.lush-forest > .username-display{
+    background-color: var(--lush-green);
+}
+#topbar.lush-forest > .username-display:hover{
+    background-color: #86956f;
+}
+#topbar.lush-forest .theme-list{    
+    background-color: var(--lush-green);
+}
+#topbar.lush-forest .theme-list:hover{
+    background-color: #86956f;
 }
