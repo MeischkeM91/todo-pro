@@ -98,6 +98,23 @@ body{
 .username-display:active{
     transform: translate(1px, 1px);
 }
+/** Theme Selection **/
+.theme-container{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+.theme-list{    
+    background-color: var(--soft-blue);
+    padding: 3px 5px;
+    margin-left: 6px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 3px black;
+    font-weight: 500;
+}
+.theme-list:hover{
+    background-color: #b6d2e3;
+}
 /***********
 **  MENU  **
 ***********/
