@@ -7,7 +7,7 @@ const content = document.querySelector('#content');
 const createNewListBtn = () =>{
     const newListBtn = document.createElement('div');
     newListBtn.classList.add('new-list-btn');
-    newListBtn.innerText = '+ New List';
+    newListBtn.innerHTML = `&#65291; New List`;
     menu.appendChild(newListBtn);
 };
 
@@ -46,7 +46,7 @@ const createNewToDoList = (title) =>{
     newToDoList.classList.add('todo-list');
     newToDoList.innerText = title;
     listmenu.appendChild(newToDoList);
-}
+};
 
 
 
@@ -56,7 +56,7 @@ const createMenu = () =>{
     createPeriodicList();
     createToDoListMenu();
     createNewToDoList('List One');
-    createNewToDoList('List two');
+    createNewToDoList('List Two');
 };
 // Load topbar to page
 export default function loadMenu() {

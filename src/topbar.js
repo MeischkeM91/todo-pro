@@ -1,5 +1,5 @@
 // In this file we will create the Topbar of our page, including the menu btn, logo, account name, and theme changer
-
+const wrapper = document.querySelector('#wrapper');
 const topbar = document.querySelector('#topbar');
 const menu = document.querySelector('#menu');
 const content = document.querySelector('#content');
@@ -16,10 +16,12 @@ const createMenuBtn = () =>{
     menuBtnContainer.addEventListener('click', ()=>{
         if(!menuOpen){
             menuBtnContainer.classList.add('open');
+            wrapper.classList.remove('closed');
             menuOpen=true;
             console.log(menuOpen);
         } else{
             menuBtnContainer.classList.remove('open');
+            wrapper.classList.add('closed');
             menuOpen=false;
             console.log(menuOpen);
         };

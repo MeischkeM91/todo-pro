@@ -20,10 +20,19 @@
     padding: 0;
     font-family: var(--raleway);
 }
-body{
+#wrapper{
     display: grid;
     grid-template-rows: 9vh 91vh;
-    grid-template-columns: 230px 4fr;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+    'topbarDiv topbarDiv'
+    'menuDiv contentDiv';
+    background: var(--soft-blue);
+}
+#wrapper.closed{
+    display: grid;
+    grid-template-rows: 9vh 91vh;
+    grid-template-columns: 0px 1fr;
     grid-template-areas: 
     'topbarDiv topbarDiv'
     'menuDiv contentDiv';
@@ -131,9 +140,14 @@ body{
     display: flex;
     flex-direction: column;
     background-color: var(--soft-brown);
+    width: 200px;
     height: 92vh;
     border-right: 1px solid var(--dark-brown);
     padding: 15px 10px;
+    transition: all .2s ease-in-out;
+}
+#wrapper.closed > #menu{
+    width: 10px;
 }
 /** New List Btn **/
 .new-list-btn{
@@ -149,6 +163,7 @@ body{
 }
 .new-list-btn:hover{
     background-color:#d1bea6;
+    cursor: pointer;
 }
 .new-list-btn:active{
     transform: scale(.95);
@@ -165,6 +180,7 @@ body{
 .periodic-container>div:hover{
     font-size: 1.4rem;
     font-weight: 600;
+    cursor: pointer;
 }
 /** To-Do List Menu **/
 .todo-list-menu{
@@ -180,6 +196,7 @@ body{
 .todo-list-menu>div:hover{
     font-size: 1.4rem;
     font-weight: 600;
+    cursor: pointer;
 }
 /*****************
 ** PAGE CONTENT **
