@@ -1,4 +1,10 @@
 import './style.css';
 import loadTopbar from './topbar';
+import loadMenu from './menu';
 
-document.onload =loadTopbar();
+const loadPage = () =>{
+    loadTopbar();
+    loadMenu();
+}
+
+document.onload =loadPage();
