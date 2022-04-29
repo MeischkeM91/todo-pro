@@ -44,10 +44,12 @@ const displayAccount = (username) =>{
 };
 
 const createThemeList = () =>{
+    // Div to hold the theme dropdown
     const themeContainer = document.createElement('div');
     themeContainer.classList.add('theme-container');
     themeContainer.setAttribute('id','theme-container')
     topbar.appendChild(themeContainer);
+    // Create a select list with each alt theme option
     const themeList = document.createElement('select');
     themeList.classList.add('theme-list');
     const sandyBeachTheme = document.createElement('option');
@@ -62,7 +64,7 @@ const createThemeList = () =>{
     lushForestTheme.classList.add('theme-list-item');
     lushForestTheme.value = 'lush-forest';
     lushForestTheme.innerText = 'Lush Forest';
-
+    // Update the page theme when a certain theme is chosen
     themeContainer.addEventListener('change', () =>{
         topbar.classList = '';
         topbar.classList = themeList.value;
@@ -75,17 +77,16 @@ const createThemeList = () =>{
     themeList.appendChild(sandyBeachTheme);
     themeList.appendChild(nightMoonTheme);
     themeList.appendChild(lushForestTheme);
-
 };
 
-
-
+// Run each () to create the topbar 
 const createTopbar = () =>{
     createMenuBtn();
     addLogo();
     displayAccount(accUsername);
     createThemeList();
 };
+// Load topbar to page
 export default function loadTopbar() {
     createTopbar();
 };
