@@ -28,10 +28,35 @@ const createPeriodicList = () =>{
     periodicContainer.appendChild(dueWeekLink);
 };
 
+const createToDoListMenu = () =>{
+    const toDoListMenu = document.createElement('div')
+    toDoListMenu.classList.add('todo-list-menu');
+    // Projects header
+    const toDoHeader = document.createElement('h1');
+    toDoHeader.classList.add('todo-list-header');
+    toDoHeader.innerText = 'To-Do Lists';
+
+    menu.appendChild(toDoListMenu);
+    toDoListMenu.appendChild(toDoHeader);
+};
+
+const createNewToDoList = (title) =>{
+    let listmenu = document.querySelector('.todo-list-menu');
+    const newToDoList = document.createElement('div');
+    newToDoList.classList.add('todo-list');
+    newToDoList.innerText = title;
+    listmenu.appendChild(newToDoList);
+}
+
+
+
 // Run each () to create the menu 
 const createMenu = () =>{
     createNewListBtn();
     createPeriodicList();
+    createToDoListMenu();
+    createNewToDoList('List One');
+    createNewToDoList('List two');
 };
 // Load topbar to page
 export default function loadMenu() {
