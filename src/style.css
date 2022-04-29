@@ -23,7 +23,7 @@
 body{
     display: grid;
     grid-template-rows: 9vh 91vh;
-    grid-template-columns: 220px 4fr;
+    grid-template-columns: 230px 4fr;
     grid-template-areas: 
     'topbarDiv topbarDiv'
     'menuDiv contentDiv';
@@ -128,9 +128,58 @@ body{
 ***********/
 #menu{
     grid-area: menuDiv;
+    display: flex;
+    flex-direction: column;
     background-color: var(--soft-brown);
     height: 92vh;
     border-right: 1px solid var(--dark-brown);
+    padding: 15px 10px;
+}
+/** New List Btn **/
+.new-list-btn{
+    align-self: stretch;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color:#dccdb9;
+    border: 2px solid var(--dark-brown);
+    border-radius: 7px;
+    padding: 2px 0;
+    margin-bottom: 15px;
+}
+.new-list-btn:hover{
+    background-color:#d1bea6;
+}
+.new-list-btn:active{
+    transform: scale(.95);
+}
+/** Periodic Tabs **/
+.periodic-container{
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+    font-weight: 500;
+    gap: 10px;
+    padding: 0px 20px 10px;
+}
+.periodic-container>div:hover{
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+/** To-Do List Menu **/
+.todo-list-menu{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    gap: 10px;
+}
+.todo-list-menu>div{
+    font-size: 1.3rem;
+    padding: 0px 20px;
+}
+.todo-list-menu>div:hover{
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 /*****************
 ** PAGE CONTENT **
