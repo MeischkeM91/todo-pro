@@ -2,6 +2,7 @@
 
 :root{
     --soft-blue: #D3E2EB;
+    --soft-blue-hover: #b6d2e3;
     --dark-blue: #6F8C9E;
     --soft-brown: #EAE0D2;
     --dark-brown: #9E917E;
@@ -44,7 +45,7 @@
 #topbar{
     grid-area: topbarDiv;
     display: grid;
-    grid-template-columns: auto 5fr repeat(2,1fr);
+    grid-template-columns: auto 4fr repeat(2,1fr);
     background-color: var(--dark-blue);
     width: 100vw;
 }
@@ -110,7 +111,7 @@
     font-weight: 500;
 }
 .username-display:hover{
-    background-color: #b6d2e3;
+    background-color: var(--soft-blue-hover);
 }
 .username-display:active{
     transform: translate(1px, 1px);
@@ -130,7 +131,7 @@
     font-weight: 500;
 }
 .theme-list:hover{
-    background-color: #b6d2e3;
+    background-color: var(--soft-blue-hover);
 }
 /***********
 **  MENU  **
@@ -206,8 +207,50 @@
     background-color: var(--soft-blue);
     box-shadow: inset 1px 0px 6px black;
 }
-
-
+/** List Items **/
+.list-item{
+    display: grid;
+    grid-template-columns: 1rem 1fr repeat(4, auto);
+    grid-template-rows: 30px;
+    justify-items: center;
+    align-items: center;
+    margin: 10px 25px 2px 15px;
+    border-bottom: 1px solid black;
+    font-size: 1.2rem;
+}
+.list-item:hover{
+    background-color: var(--soft-blue-hover);
+}
+#list-item-status-check{
+    margin-left: 10px;
+    transform: scale(1.5);
+}
+.list-item-title{
+    justify-self: start;
+    padding-left: 1rem;
+}
+.list-item-expand-btn{
+    background-repeat: no-repeat;
+}
+.list-item-urgency{
+    font-weight: 600;
+    margin: 0px 10px;
+}
+.list-item-urgency.high-urg{
+    color: red;
+}
+.list-item-urgency.low-urg{
+    color: green;
+}
+.list-item-due{
+    font-weight: 500;
+}
+.list-item-delete-btn{
+    margin-left: 10px;
+}
+.list-item-delete-btn:hover, .list-item-expand-btn:hover{
+    transform: scale(1.2);
+}
 /*****************
 ** Theme Colors **
 *****************/
