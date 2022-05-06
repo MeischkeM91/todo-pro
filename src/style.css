@@ -252,6 +252,27 @@
 .list-item-delete-btn:hover, .list-item-expand-btn:hover{
     transform: scale(1.2);
 }
+
+/* Task Popout */
+.todo-item-pop-container{
+    position: fixed;
+    width: 50%;
+    top: 40%;
+    left: 34%;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: 10px 15px;
+    background-color: white;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 10px;
+    font-size: 1.3rem;
+}
+.pop-item-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    border-bottom: 1px solid black;
+}
 /*****************
 ** Theme Colors **
 *****************/
