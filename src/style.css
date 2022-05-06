@@ -23,7 +23,7 @@
 }
 #wrapper{
     display: grid;
-    grid-template-rows: 9vh 91vh;
+    grid-template-rows: auto 1fr;
     grid-template-columns: auto 1fr;
     grid-template-areas: 
     'topbarDiv topbarDiv'
@@ -32,7 +32,7 @@
 }
 #wrapper.closed{
     display: grid;
-    grid-template-rows: 9vh 91vh;
+    grid-template-rows: auto 1fr;
     grid-template-columns: 0px 1fr;
     grid-template-areas: 
     'topbarDiv topbarDiv'
@@ -54,8 +54,8 @@
     display: flex;
     justify-content:center;
     align-items:center;
-    width:80px;
-    height:80px; 
+    width:75px;
+    height:75px; 
     cursor: pointer; 
     transition: all .5s ease-in-out;
 }
