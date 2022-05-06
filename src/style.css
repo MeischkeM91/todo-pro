@@ -211,10 +211,11 @@
 .list-item{
     display: grid;
     grid-template-columns: 1rem 1fr repeat(4, auto);
-    grid-template-rows: 30px;
+    grid-template-rows: auto;
     justify-items: center;
     align-items: center;
     margin: 10px 25px 2px 15px;
+    padding: 2px 0px 3px 0px;
     border-bottom: 1px solid black;
     font-size: 1.2rem;
 }
