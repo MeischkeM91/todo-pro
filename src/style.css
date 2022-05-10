@@ -145,7 +145,7 @@
     height: 92vh;
     border-right: 1px solid var(--dark-brown);
     padding: 15px 10px;
-    transition: all .2s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 #wrapper.closed > #menu{
     width: 10px;
@@ -206,6 +206,32 @@
     grid-area: contentDiv;
     background-color: var(--soft-blue);
     box-shadow: inset 1px 0px 6px black;
+}
+/** Add Task Button **/
+.add-task-btn{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 60px;
+    line-height: 100%;
+    background-color: white;
+    box-shadow: 0px 1px 6px black;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.add-task-btn > img{ width: 80%;}
+.add-task-btn:hover{
+    transition: transform .3s;
+    transform: scale(1.1);
+}
+.add-task-btn:active{
+    transition: transform .1s;
+    transform: translate(2px,2px);
 }
 /** List Items **/
 .list-item{

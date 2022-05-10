@@ -1,6 +1,7 @@
 // This code will create the task list within the content container as well as the expanded task information container
 import expandBtn from './images/expand-btn.svg';
 import deleteBtn from './images/close-btn.svg';
+import addBtn from './images/add-task-btn.svg';
 import { deleteParentDiv } from './logic';
 
 const menu = document.querySelector('#menu');
@@ -95,5 +96,19 @@ export const listTaskItems = (item) =>{
     listItemContainer.appendChild(listItemUrgency);
     listItemContainer.appendChild(listItemDueDate);
     listItemContainer.appendChild(listItemDelBtn);
+};
+
+export const createAddTaskBtn = () =>{
+    const addTaskContainer = document.createElement('div');
+    addTaskContainer.classList.add('add-task-btn');
+    addTaskContainer.addEventListener('click', () =>{
+        console.log('add task');
+    });
+    const addTaskImg = document.createElement('img');
+    addTaskImg.src = addBtn;
+    addTaskImg.alt = "Add Task"
+
+    content.appendChild(addTaskContainer);
+    addTaskContainer.appendChild(addTaskImg);
 };
 
