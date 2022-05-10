@@ -6,8 +6,45 @@ const menu = document.querySelector('#menu');
 const content = document.querySelector('#content');
 
 
+const createPopout = (item) =>{
+    const popContainer = document.createElement('div');
+    popContainer.classList.add('todo-item-pop-container');
+
+    const popClose = document.createElement('img');
+    popClose.src = deleteBtn;
+    popClose.alt = 'Close';
+    popClose.classList.add('pop-close-btn');
+
+    const popTitle = document.createElement('p');
+    popTitle.classList.add('pop-item-title');
+    popTitle.innerText = item.title;
+
+    const popDue = document.createElement('p');
+    popDue.classList.add('pop-item-due');
+    popDue.innerText = `Due: ${item.dueDate}`;
+
+    const popUrg = document.createElement('p');
+    popUrg.classList.add('pop-item-urgency');
+    let urgencyVal = item.urgency.charAt(0).toUpperCase() +
+    item.urgency.slice(1);
+    popUrg.innerText = `Urgency: ${urgencyVal}`;
+
+    const popDescription = document.createElement('p');
+    popDescription.classList.add('pop-item-description');
+    popDescription.innerText = item.description;
+
+    // Build Popout
+    content.appendChild(popContainer);
+    popContainer.appendChild(popTitle);
+    popContainer.appendChild(popClose);
+    popContainer.appendChild(popDue);
+    popContainer.appendChild(popUrg);
+    popContainer.appendChild(popDescription);
+
+}
 
 export const listTaskItems = (item) =>{
+    
     const listItemContainer = document.createElement('div');
     listItemContainer.classList.add('list-item');
 
@@ -22,6 +59,9 @@ export const listTaskItems = (item) =>{
     const listItemExpandBtn = document.createElement('img');
     listItemExpandBtn.classList.add('list-item-expand-btn');
     listItemExpandBtn.src = expandBtn;
+    listItemExpandBtn.addEventListener('click', () =>{
+        createPopout(item);
+    })
 
     const listItemUrgency = document.createElement('p');
     listItemUrgency.classList.add('list-item-urgency');
@@ -50,5 +90,5 @@ export const listTaskItems = (item) =>{
     listItemContainer.appendChild(listItemUrgency);
     listItemContainer.appendChild(listItemDueDate);
     listItemContainer.appendChild(listItemDelBtn);
+};
 
-}
