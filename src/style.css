@@ -252,15 +252,20 @@
 .list-item-delete-btn:hover, .list-item-expand-btn:hover{
     transform: scale(1.2);
 }
-
 /* Task Popout */
 .todo-item-pop-container{
     position: fixed;
     width: 50%;
     top: 40%;
     left: 34%;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    "popTitle popClose"
+    "popDue popDue"
+    "popUrg popUrg"
+    "popDesc popDesc";
     gap: 3px;
     padding: 10px 15px;
     background-color: white;
@@ -269,10 +274,28 @@
     font-size: 1.3rem;
 }
 .pop-item-title{
+    grid-area: popTitle;
     font-size: 1.5rem;
     font-weight: 600;
     border-bottom: 1px solid black;
 }
+.pop-close-btn{
+    grid-area: popClose;
+    width: 25px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    padding: 2px;
+    margin-left: 30px;
+}
+.pop-close-btn:hover{
+    transform: scale(1.1);
+    background-color: lightgray;
+}
+.pop-item-due{ grid-area: popDue;}
+.pop-item-urgency {grid-area: popUrg;}
+.pop-item-description {grid-area: popDesc;}
+
+.pop-close-btn:active, .list-item-delete-btn:active, .list-item-expand-btn:active{transform: translate(1px, 1px);}
 /*****************
 ** Theme Colors **
 *****************/
