@@ -204,6 +204,53 @@
     font-weight: 600;
     background-color: #dccdb9;
 }
+/** Create New List container **/
+.new-list-bg{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.new-list-container{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: auto;
+    background-color: white;
+    padding: 10px 15px;
+    box-shadow: 0px 1px 3px black;
+    border-radius: 8px;
+}
+.new-list-container input{
+    margin: 7px 0px;
+    padding: 2px 5px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 40px;
+}
+.new-list-container button{
+    width: fit-content;
+    align-self: end;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 5px 10px 0px 0px;
+    padding: 2px 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.new-list-container button:hover{ 
+    transform: scale(1.03);
+    background-color: whitesmoke;
+}
+.new-list-container button:active{
+    transform: translate(1px, 1px);
+}
 /*****************
 ** PAGE CONTENT **
 *****************/

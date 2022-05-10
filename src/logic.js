@@ -1,5 +1,4 @@
-
-let menuLists = [];
+// This JS file will contain all application logic, seperate from the interface code
 
 
 function deleteParentDiv(e){

@@ -1,17 +1,45 @@
 // In this file we will create the Side Menu of our page, including an 'New List' button, 'today'-'week'-'all' tabs, and a list of all To Do lists.
-import { makeActive } from "./logic";
+import { deleteParentDiv,makeActive } from "./logic";
 
 const topbar = document.querySelector('#topbar');
 const menu = document.querySelector('#menu');
 const content = document.querySelector('#content');
 
+
+const createListForm = () =>{
+    const newListBg = document.createElement('div');
+    newListBg.classList.add('new-list-bg');
+    const newListContainer = document.createElement('div');
+    newListContainer.classList.add('new-list-container');
+    const newListHeader = document.createElement('h2');
+    newListHeader.classList.add('new-list-header');
+    newListHeader.innerText = 'New List Name:'
+    const newListInput = document.createElement('input');
+    newListInput.type = 'text';
+    const addNewListBtn = document.createElement('button');
+    addNewListBtn.onclick = function(){console.log='ClickedBTN'};
+    addNewListBtn.innerText = 'Create'
+
+    newListBg.addEventListener('click', (e)=>{
+        if (!newListContainer.contains(e.target)){
+            deleteParentDiv(newListContainer);
+        }
+    });
+    content.appendChild(newListBg);
+    newListBg.appendChild(newListContainer);
+    newListContainer.appendChild(newListHeader);
+    newListContainer.appendChild(newListInput);
+    newListContainer.appendChild(addNewListBtn);
+};
 const createNewListBtn = () =>{
     const newListBtn = document.createElement('div');
     newListBtn.classList.add('new-list-btn');
     newListBtn.innerHTML = `&#65291; New List`;
+    newListBtn.addEventListener('click', ()=>{
+        createListForm();
+    });
     menu.appendChild(newListBtn);
 };
-
 const createPeriodicList = () =>{
     const periodicContainer = document.createElement('div');
     periodicContainer.classList.add('periodic-container');
