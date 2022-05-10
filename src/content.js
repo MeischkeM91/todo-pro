@@ -1,6 +1,7 @@
 // This code will create the task list within the content container as well as the expanded task information container
 import expandBtn from './images/expand-btn.svg';
 import deleteBtn from './images/close-btn.svg';
+import { deleteParentDiv } from './logic';
 
 const menu = document.querySelector('#menu');
 const content = document.querySelector('#content');
@@ -14,6 +15,9 @@ const createPopout = (item) =>{
     popClose.src = deleteBtn;
     popClose.alt = 'Close';
     popClose.classList.add('pop-close-btn');
+    popClose.addEventListener('click', ()=>{
+        deleteParentDiv(popClose);
+    });
     // Title
     const popTitle = document.createElement('p');
     popTitle.classList.add('pop-item-title');
@@ -79,6 +83,9 @@ export const listTaskItems = (item) =>{
     const listItemDelBtn = document.createElement('img');
     listItemDelBtn.classList.add('list-item-delete-btn');
     listItemDelBtn.src = deleteBtn;
+    listItemDelBtn.addEventListener('click', ()=>{
+        deleteParentDiv(listItemDelBtn);
+    });
 
     // Create the list item
     content.appendChild(listItemContainer);
