@@ -9,30 +9,29 @@ const content = document.querySelector('#content');
 const createPopout = (item) =>{
     const popContainer = document.createElement('div');
     popContainer.classList.add('todo-item-pop-container');
-
+    // Close Button
     const popClose = document.createElement('img');
     popClose.src = deleteBtn;
     popClose.alt = 'Close';
     popClose.classList.add('pop-close-btn');
-
+    // Title
     const popTitle = document.createElement('p');
     popTitle.classList.add('pop-item-title');
     popTitle.innerText = item.title;
-
+    // Due Date
     const popDue = document.createElement('p');
     popDue.classList.add('pop-item-due');
     popDue.innerText = `Due: ${item.dueDate}`;
-
+    // Urgency
     const popUrg = document.createElement('p');
     popUrg.classList.add('pop-item-urgency');
     let urgencyVal = item.urgency.charAt(0).toUpperCase() +
     item.urgency.slice(1);
     popUrg.innerText = `Urgency: ${urgencyVal}`;
-
+    // Description
     const popDescription = document.createElement('p');
     popDescription.classList.add('pop-item-description');
     popDescription.innerText = item.description;
-
     // Build Popout
     content.appendChild(popContainer);
     popContainer.appendChild(popTitle);
@@ -40,8 +39,7 @@ const createPopout = (item) =>{
     popContainer.appendChild(popDue);
     popContainer.appendChild(popUrg);
     popContainer.appendChild(popDescription);
-
-}
+};
 
 export const listTaskItems = (item) =>{
     
