@@ -27,7 +27,6 @@ const createPeriodicList = () =>{
     periodicContainer.appendChild(dueTodayLink);
     periodicContainer.appendChild(dueWeekLink);
 };
-
 const createToDoListMenu = () =>{
     const toDoListMenu = document.createElement('div')
     toDoListMenu.classList.add('todo-list-menu');
@@ -39,7 +38,6 @@ const createToDoListMenu = () =>{
     menu.appendChild(toDoListMenu);
     toDoListMenu.appendChild(toDoHeader);
 };
-
 const createNewToDoList = (title) =>{
     let listmenu = document.querySelector('.todo-list-menu');
     const newToDoList = document.createElement('div');
