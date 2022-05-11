@@ -6,6 +6,20 @@ const menu = document.querySelector('#menu');
 const content = document.querySelector('#content');
 
 
+const createNewToDoList = (title) =>{
+    let listmenu = document.querySelector('.todo-list-menu');
+    const newToDoList = document.createElement('div');
+    newToDoList.classList.add('todo-list');
+    newToDoList.innerText = title;
+    let newTodoListVal = title.replace(' ','-').toLowerCase();
+    newToDoList.setAttribute('value',newTodoListVal);
+    newToDoList.addEventListener('click', ()=>{
+        makeActive(newToDoList);
+    });
+    listmenu.appendChild(newToDoList);
+};
+
+
 const createListForm = () =>{
     const newListBg = document.createElement('div');
     newListBg.classList.add('new-list-bg');
@@ -17,9 +31,12 @@ const createListForm = () =>{
     const newListInput = document.createElement('input');
     newListInput.type = 'text';
     const addNewListBtn = document.createElement('button');
-    addNewListBtn.onclick = function(){console.log='ClickedBTN'};
     addNewListBtn.innerText = 'Create'
-
+    addNewListBtn.onclick = function() {
+        createNewToDoList(newListInput.value); 
+        deleteParentDiv(newListContainer)
+    };
+    //this eventListener will close to new list prompt if clicked outside of container
     newListBg.addEventListener('click', (e)=>{
         if (!newListContainer.contains(e.target)){
             deleteParentDiv(newListContainer);
@@ -67,18 +84,7 @@ const createToDoListMenu = () =>{
     menu.appendChild(toDoListMenu);
     toDoListMenu.appendChild(toDoHeader);
 };
-const createNewToDoList = (title) =>{
-    let listmenu = document.querySelector('.todo-list-menu');
-    const newToDoList = document.createElement('div');
-    newToDoList.classList.add('todo-list');
-    newToDoList.innerText = title;
-    let newTodoListVal = title.replace(' ','-').toLowerCase();
-    newToDoList.setAttribute('value',newTodoListVal);
-    newToDoList.addEventListener('click', ()=>{
-        makeActive(newToDoList);
-    });
-    listmenu.appendChild(newToDoList);
-};
+
 
 
 
