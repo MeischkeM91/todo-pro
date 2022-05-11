@@ -18,8 +18,6 @@ const createNewToDoList = (title) =>{
     });
     listmenu.appendChild(newToDoList);
 };
-
-
 const createListForm = () =>{
     const newListBg = document.createElement('div');
     newListBg.classList.add('new-list-bg');
@@ -32,6 +30,7 @@ const createListForm = () =>{
     newListInput.type = 'text';
     const addNewListBtn = document.createElement('button');
     addNewListBtn.innerText = 'Create'
+    // When Create is clicked, new list is created and added to menu
     addNewListBtn.onclick = function() {
         createNewToDoList(newListInput.value); 
         deleteParentDiv(newListContainer)
@@ -84,9 +83,6 @@ const createToDoListMenu = () =>{
     menu.appendChild(toDoListMenu);
     toDoListMenu.appendChild(toDoHeader);
 };
-
-
-
 
 // Run each () to create the menu 
 const createMenu = () =>{

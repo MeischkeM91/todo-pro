@@ -98,10 +98,75 @@ export const listTaskItems = (item) =>{
     listItemContainer.appendChild(listItemDelBtn);
 };
 
+const createAddTaskForm = () =>{
+    const newTaskBg = document.createElement('div');
+    newTaskBg.classList.add('new-task-bg');
+    const newTaskContainer = document.createElement('div');
+    newTaskContainer.classList.add('new-task-container');
+    const newTaskContainerHead = document.createElement('p');
+    newTaskContainerHead.classList.add('new-task-container-head');
+    newTaskContainerHead.innerText = 'Create a New Task';
+    const newTaskNameHead = document.createElement('p');
+    newTaskNameHead.classList.add('new-task-name-head');
+    newTaskNameHead.innerText = 'Task Name';
+    const newTaskNameInput = document.createElement('input');
+    newTaskNameInput.type = 'text';
+    const newTaskInputContainer = document.createElement('div');
+    const newTaskUrgContainer = document.createElement('div');
+    newTaskUrgContainer.classList.add('new-task-urg');
+    const newTaskUrgHead = document.createElement('p')
+    newTaskUrgHead.innerText = 'Urgency:';
+    const newTaskUrgSel = document.createElement('select');
+    const newTaskUrgHigh = document.createElement('option');
+    newTaskUrgHigh.innerText = 'High';
+    const newTaskUrgLow = document.createElement('option');
+    newTaskUrgLow.innerText = 'Low';
+    const newTaskDueContainer = document.createElement('div');
+    newTaskDueContainer.classList.add('new-task-due');
+    const newTaskDueHead = document.createElement('p')
+    newTaskDueHead.innerText = 'Date Due:';
+    const newTaskDueDate = document.createElement('input');
+    newTaskDueDate.type = 'date';
+    const newTaskDescHead = document.createElement('p');
+    newTaskDescHead.classList.add('new-task-desc-head');
+    newTaskDescHead.innerText = 'Description';
+    const newTaskDescText = document.createElement('textarea');
+    const addNewTaskBtn = document.createElement('button');
+    addNewTaskBtn.innerText = 'Create';
+
+
+    //this eventListener will close to new list prompt if clicked outside of container
+    newTaskBg.addEventListener('click', (e)=>{
+        if (!newTaskContainer.contains(e.target)){
+            deleteParentDiv(newTaskContainer);
+        }
+    });
+
+    content.appendChild(newTaskBg);
+    newTaskBg.appendChild(newTaskContainer);
+    newTaskContainer.appendChild(newTaskContainerHead);
+    newTaskContainer.appendChild(newTaskNameHead);
+    newTaskContainer.appendChild(newTaskNameInput);
+    newTaskContainer.appendChild(newTaskInputContainer);
+    newTaskInputContainer.appendChild(newTaskUrgContainer);
+    newTaskUrgContainer.appendChild(newTaskUrgHead);
+    newTaskUrgContainer.appendChild(newTaskUrgSel);
+    newTaskUrgSel.appendChild(newTaskUrgHigh);
+    newTaskUrgSel.appendChild(newTaskUrgLow);
+    newTaskInputContainer.appendChild(newTaskDueContainer);
+    newTaskDueContainer.appendChild(newTaskDueHead);
+    newTaskDueContainer.appendChild(newTaskDueDate);
+    newTaskContainer.appendChild(newTaskDescHead);
+    newTaskContainer.appendChild(newTaskDescText);
+    newTaskContainer.appendChild(addNewTaskBtn);
+};
+
+
 export const createAddTaskBtn = () =>{
     const addTaskContainer = document.createElement('div');
     addTaskContainer.classList.add('add-task-btn');
     addTaskContainer.addEventListener('click', () =>{
+        createAddTaskForm();
         console.log('add task');
     });
     const addTaskImg = document.createElement('img');
