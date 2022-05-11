@@ -72,6 +72,8 @@ const createNewToDoList = (title) =>{
     const newToDoList = document.createElement('div');
     newToDoList.classList.add('todo-list');
     newToDoList.innerText = title;
+    let newTodoListVal = title.replace(' ','-').toLowerCase();
+    newToDoList.setAttribute('value',newTodoListVal);
     newToDoList.addEventListener('click', ()=>{
         makeActive(newToDoList);
     });
