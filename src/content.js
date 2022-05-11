@@ -108,9 +108,10 @@ const createAddTaskForm = () =>{
     newTaskContainerHead.innerText = 'Create a New Task';
     const newTaskNameHead = document.createElement('p');
     newTaskNameHead.classList.add('new-task-name-head');
-    newTaskNameHead.innerText = 'Task Name';
+    newTaskNameHead.innerText = 'Task Name:';
     const newTaskNameInput = document.createElement('input');
     newTaskNameInput.type = 'text';
+    newTaskNameInput.classList.add('new-task-name-input')
     const newTaskInputContainer = document.createElement('div');
     const newTaskUrgContainer = document.createElement('div');
     newTaskUrgContainer.classList.add('new-task-urg');
@@ -129,7 +130,7 @@ const createAddTaskForm = () =>{
     newTaskDueDate.type = 'date';
     const newTaskDescHead = document.createElement('p');
     newTaskDescHead.classList.add('new-task-desc-head');
-    newTaskDescHead.innerText = 'Description';
+    newTaskDescHead.innerText = 'Description:';
     const newTaskDescText = document.createElement('textarea');
     const addNewTaskBtn = document.createElement('button');
     addNewTaskBtn.innerText = 'Create';
