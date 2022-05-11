@@ -204,8 +204,8 @@
     font-weight: 600;
     background-color: #dccdb9;
 }
-/** Create New List container **/
-.new-list-bg{
+/** Create New List and New Taks containers **/
+.new-list-bg, .new-task-bg{
     position: fixed;
     top: 0;
     right: 0;
@@ -216,10 +216,10 @@
     align-items:center;
     background-color: rgba(0, 0, 0, 0.4);
 }
-.new-list-container{
+.new-list-container, .new-task-container{
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 40%;
     height: auto;
     background-color: white;
     padding: 10px 15px;
@@ -233,7 +233,7 @@
     font-weight: 500;
     border-radius: 40px;
 }
-.new-list-container button{
+.new-list-container button, .new-task-container button{
     width: fit-content;
     align-self: end;
     font-size: 1.1rem;
@@ -244,13 +244,45 @@
     border-radius: 10px;
     background-color: #fff;
 }
-.new-list-container button:hover{ 
+.new-list-container button:hover, .new-task-container button:hover{ 
     transform: scale(1.03);
     background-color: whitesmoke;
 }
-.new-list-container button:active{
+.new-list-container button:active, .new-task-container button:active{
     transform: translate(1px, 1px);
 }
+
+.new-task-container{
+    font-size: 1.2rem;
+    font-weight: 500;
+    gap: 3px;
+}
+.new-task-container-head{
+    align-self: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.new-task-name-input, .new-task-urg>select, .new-task-due>input{
+    font-size: 1.2rem;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #1B2129;
+    padding: 0px 3px;
+    margin-bottom: 20px;
+}
+.new-task-urg{ width:100%; margin-right: 15px; border-right: 1px solid #1B2129;}
+.new-task-container>div{
+    display: flex;
+    justify-content: space-between;
+}
+.new-task-container textarea{
+    height:5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: 2px 5px;
+}
+.new-task-container button {margin-top: 13px;}
 /*****************
 ** PAGE CONTENT **
 *****************/
