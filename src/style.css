@@ -251,7 +251,6 @@
 .new-list-container button:active, .new-task-container button:active{
     transform: translate(1px, 1px);
 }
-
 .new-task-container{
     font-size: 1.2rem;
     font-weight: 500;
@@ -263,7 +262,7 @@
     font-weight: 700;
     margin-bottom: 15px;
 }
-.new-task-name-input, .new-task-urg>select, .new-task-due>input{
+.new-task-name-input, .new-task-urg>select, .new-task-due>input, .new-todo-list-sel>select{
     font-size: 1.2rem;
     border: none;
     outline: none;
@@ -272,9 +271,14 @@
     margin-bottom: 20px;
 }
 .new-task-urg{ width:100%; margin-right: 15px; border-right: 1px solid #1B2129;}
-.new-task-container>div{
+.new-task-container > div:first-of-type {
     display: flex;
     justify-content: space-between;
+}
+.new-todo-list-sel{
+    display: flex;
+    margin-top: 10px;
+    
 }
 .new-task-container textarea{
     height:5rem;
@@ -404,7 +408,6 @@
 .pop-item-due{ grid-area: popDue;}
 .pop-item-urgency {grid-area: popUrg;}
 .pop-item-description {grid-area: popDesc;}
-
 .pop-close-btn:active, .list-item-delete-btn:active, .list-item-expand-btn:active{transform: translate(1px, 1px);}
 /*****************
 ** Theme Colors **
