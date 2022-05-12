@@ -15,5 +15,14 @@ function makeActive(e){
     } else return;
 };
 
+function displayToDoList(listID){
+    const toDoLists = document.querySelectorAll('.todo-content');
+    const listToActivate = document.getElementById(listID);
+    toDoLists.forEach(element => {
+        element.style.display='none';
+    });
+    listToActivate.style.display = '';
+}
 
-export {deleteParentDiv, makeActive};
+
+export {deleteParentDiv, makeActive, displayToDoList};

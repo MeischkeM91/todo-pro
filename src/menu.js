@@ -1,5 +1,5 @@
 // In this file we will create the Side Menu of our page, including an 'New List' button, 'today'-'week'-'all' tabs, and a list of all To Do lists.
-import { deleteParentDiv,makeActive } from "./logic";
+import { deleteParentDiv, makeActive, displayToDoList } from "./logic";
 
 const topbar = document.querySelector('#topbar');
 const menu = document.querySelector('#menu');
@@ -15,9 +15,11 @@ const createNewToDoList = (title) =>{
     newToDoList.setAttribute('value',newTodoListVal);
     newToDoList.addEventListener('click', ()=>{
         makeActive(newToDoList);
+        displayToDoList(newTodoListVal);
     });
     const newToDoListContent = document.createElement('div');
     newToDoListContent.setAttribute('id',newTodoListVal);
+    newToDoListContent.classList.add('todo-content');
     newToDoListContent.style.display = 'none';
 
     listmenu.appendChild(newToDoList);
