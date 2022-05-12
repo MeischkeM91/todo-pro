@@ -338,6 +338,7 @@
 }
 #list-item-status-check{
     margin-left: 10px;
+    position:sticky;
     transform: scale(1.5);
 }
 .list-item-title{
