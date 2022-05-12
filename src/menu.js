@@ -16,7 +16,12 @@ const createNewToDoList = (title) =>{
     newToDoList.addEventListener('click', ()=>{
         makeActive(newToDoList);
     });
+    const newToDoListContent = document.createElement('div');
+    newToDoListContent.setAttribute('id',newTodoListVal);
+    newToDoListContent.style.display = 'none';
+
     listmenu.appendChild(newToDoList);
+    content.appendChild(newToDoListContent);
 };
 const createListForm = () =>{
     const newListBg = document.createElement('div');
