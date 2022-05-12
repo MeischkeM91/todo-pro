@@ -76,7 +76,7 @@ export const listTaskItems = (item) =>{
         listItemUrgency.innerText ='HIGH';
     }
     else {  listItemUrgency.innerText = "ERROR"  };
-
+    
     const listItemDueDate = document.createElement('p');
     listItemDueDate.classList.add('list-item-due');
     listItemDueDate.innerText = item.dueDate;
@@ -134,7 +134,13 @@ const createAddTaskForm = () =>{
     const newTaskDescText = document.createElement('textarea');
     const addNewTaskBtn = document.createElement('button');
     addNewTaskBtn.innerText = 'Create';
-
+    // Create a list of active To Do Lists
+    const toDoListSelArr = document.querySelectorAll('.todo-list');
+    const toDoListContainer = document.createElement('div');
+    toDoListContainer.classList.add('new-todo-list-sel');
+    const toDoListSelHead = document.createElement('p')
+    toDoListSelHead.innerText = 'To-Do List:';
+    const toDoListSel= document.createElement('select');
 
     //this eventListener will close to new list prompt if clicked outside of container
     newTaskBg.addEventListener('click', (e)=>{
@@ -159,9 +165,17 @@ const createAddTaskForm = () =>{
     newTaskDueContainer.appendChild(newTaskDueDate);
     newTaskContainer.appendChild(newTaskDescHead);
     newTaskContainer.appendChild(newTaskDescText);
+    newTaskContainer.appendChild(toDoListContainer);
+    toDoListContainer.appendChild(toDoListSelHead);
+    toDoListContainer.appendChild(toDoListSel);
     newTaskContainer.appendChild(addNewTaskBtn);
+    // Add all list options
+    for(let i=0; i<toDoListSelArr.length;i++){
+        const toDoListSelOpt = document.createElement('option');
+        toDoListSelOpt.innerText = toDoListSelArr[i].innerText;
+        toDoListSel.appendChild(toDoListSelOpt);
+    };
 };
-
 
 export const createAddTaskBtn = () =>{
     const addTaskContainer = document.createElement('div');
