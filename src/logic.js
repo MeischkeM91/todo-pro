@@ -22,15 +22,14 @@ function displayToDoList(listID){
         element.style.display='none';
     });
     listToActivate.style.display = '';
-}
+};
 
-/* TESTING CODE FOR LIST ITEMS */
 function ToDoItem (title, description, urgency, dueDate, list){
     return {title,description,urgency,dueDate, list}
 };
 
-
 function createNewTask(){
+    const menuLists = document.querySelectorAll('.todo-list');
     let newTaskName = document.querySelector('.new-task-name-input');
     let newTaskUrg = document.querySelector('.new-task-urg-input');
     let newTaskDate = document.querySelector('.new-task-date-input');
@@ -40,7 +39,8 @@ function createNewTask(){
     let createdTask = new ToDoItem(newTaskName.value, newTaskDesc.value, newTaskUrg.value.toLowerCase(), newTaskDate.value, newTaskList.value);
 
     console.log(createdTask);
-    listTaskItems(createdTask);
-}
+
+    listTaskItems(createdTask, createdTask.list);
+};
 
 export {deleteParentDiv, makeActive, displayToDoList, createNewTask};

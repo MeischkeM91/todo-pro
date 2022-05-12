@@ -46,8 +46,9 @@ const createPopout = (item) =>{
     popContainer.appendChild(popDescription);
 };
 
-export const listTaskItems = (item) =>{
-    
+export const listTaskItems = (item, list) =>{
+    let toDoListIdentifier = list.replace(' ','-').toLowerCase();
+    const listToAddTo = document.getElementById(toDoListIdentifier);
     const listItemContainer = document.createElement('div');
     listItemContainer.classList.add('list-item');
 
@@ -89,7 +90,7 @@ export const listTaskItems = (item) =>{
     });
 
     // Create the list item
-    content.appendChild(listItemContainer);
+    listToAddTo.appendChild(listItemContainer);
     listItemContainer.appendChild(listItemStatus);
     listItemContainer.appendChild(listItemTitle);
     listItemContainer.appendChild(listItemExpandBtn);
