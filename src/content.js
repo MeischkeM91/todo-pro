@@ -2,7 +2,7 @@
 import expandBtn from './images/expand-btn.svg';
 import deleteBtn from './images/close-btn.svg';
 import addBtn from './images/add-task-btn.svg';
-import { deleteParentDiv } from './logic';
+import { deleteParentDiv, createNewTask } from './logic';
 
 const menu = document.querySelector('#menu');
 const content = document.querySelector('#content');
@@ -146,7 +146,12 @@ const createAddTaskForm = () =>{
     const toDoListSel= document.createElement('select');
     toDoListSel.classList.add('new-task-list-input');
 
-    //this eventListener will close to new list prompt if clicked outside of container
+    // This eventListener will create a new task
+    addNewTaskBtn.addEventListener('click', ()=>{
+        createNewTask();
+        deleteParentDiv(newTaskContainer);
+    });
+    // This eventListener will close to new list prompt if clicked outside of container
     newTaskBg.addEventListener('click', (e)=>{
         if (!newTaskContainer.contains(e.target)){
             deleteParentDiv(newTaskContainer);

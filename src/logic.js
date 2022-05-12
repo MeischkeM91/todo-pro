@@ -1,5 +1,5 @@
 // This JS file will contain all application logic, seperate from the interface code
-
+import { listTaskItems, createAddTaskBtn } from './content';
 
 function deleteParentDiv(e){
     e.parentElement.remove();
@@ -24,5 +24,23 @@ function displayToDoList(listID){
     listToActivate.style.display = '';
 }
 
+/* TESTING CODE FOR LIST ITEMS */
+function ToDoItem (title, description, urgency, dueDate, list){
+    return {title,description,urgency,dueDate, list}
+};
 
-export {deleteParentDiv, makeActive, displayToDoList};
+
+function createNewTask(){
+    let newTaskName = document.querySelector('.new-task-name-input');
+    let newTaskUrg = document.querySelector('.new-task-urg-input');
+    let newTaskDate = document.querySelector('.new-task-date-input');
+    let newTaskDesc = document.querySelector('.new-task-desc-input');
+    let newTaskList = document.querySelector('.new-task-list-input');
+
+    let createdTask = new ToDoItem(newTaskName.value, newTaskDesc.value, newTaskUrg.value.toLowerCase(), newTaskDate.value, newTaskList.value);
+
+    console.log(createdTask);
+    listTaskItems(createdTask);
+}
+
+export {deleteParentDiv, makeActive, displayToDoList, createNewTask};
