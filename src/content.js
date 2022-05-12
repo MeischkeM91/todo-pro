@@ -76,7 +76,7 @@ export const listTaskItems = (item) =>{
         listItemUrgency.innerText ='HIGH';
     }
     else {  listItemUrgency.innerText = "ERROR"  };
-    
+
     const listItemDueDate = document.createElement('p');
     listItemDueDate.classList.add('list-item-due');
     listItemDueDate.innerText = item.dueDate;
@@ -118,6 +118,7 @@ const createAddTaskForm = () =>{
     const newTaskUrgHead = document.createElement('p')
     newTaskUrgHead.innerText = 'Urgency:';
     const newTaskUrgSel = document.createElement('select');
+    newTaskUrgSel.classList.add('new-task-urg-input');
     const newTaskUrgHigh = document.createElement('option');
     newTaskUrgHigh.innerText = 'High';
     const newTaskUrgLow = document.createElement('option');
@@ -128,10 +129,12 @@ const createAddTaskForm = () =>{
     newTaskDueHead.innerText = 'Date Due:';
     const newTaskDueDate = document.createElement('input');
     newTaskDueDate.type = 'date';
+    newTaskDueDate.classList.add('new-task-date-input');
     const newTaskDescHead = document.createElement('p');
     newTaskDescHead.classList.add('new-task-desc-head');
     newTaskDescHead.innerText = 'Description:';
     const newTaskDescText = document.createElement('textarea');
+    newTaskDescText.classList.add('new-task-desc-input');
     const addNewTaskBtn = document.createElement('button');
     addNewTaskBtn.innerText = 'Create';
     // Create a list of active To Do Lists
@@ -141,6 +144,7 @@ const createAddTaskForm = () =>{
     const toDoListSelHead = document.createElement('p')
     toDoListSelHead.innerText = 'To-Do List:';
     const toDoListSel= document.createElement('select');
+    toDoListSel.classList.add('new-task-list-input');
 
     //this eventListener will close to new list prompt if clicked outside of container
     newTaskBg.addEventListener('click', (e)=>{
