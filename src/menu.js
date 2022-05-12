@@ -63,21 +63,45 @@ const createNewListBtn = () =>{
     });
     menu.appendChild(newListBtn);
 };
+
 const createPeriodicList = () =>{
     const periodicContainer = document.createElement('div');
     periodicContainer.classList.add('periodic-container');
     // Link to display tasks due today
     const dueTodayLink = document.createElement('div');
-    dueTodayLink.classList.add('due-today-link');
+    dueTodayLink.classList.add('todo-list');
+    //dueTodayLink.classList.add('due-today-link');
+    dueTodayLink.setAttribute('id','due-today-link')
     dueTodayLink.innerText = 'Today';
+    const todayListContent = document.createElement('div');
+    todayListContent.setAttribute('id','due-today');
+    todayListContent.classList.add('todo-content');
+    todayListContent.style.display = 'none';
+    dueTodayLink.addEventListener('click', ()=>{
+        makeActive(dueTodayLink);
+        displayToDoList('due-today');
+    });
     // Link to display tasks due current week
     const dueWeekLink = document.createElement('div');
-    dueWeekLink.classList.add('due-week-link');
+    dueWeekLink.classList.add('todo-list');
+    //dueWeekLink.classList.add('due-week-link');
+    dueWeekLink.setAttribute('id','due-week-link')
     dueWeekLink.innerText = 'Week';
+    dueWeekLink.addEventListener('click', ()=>{
+        makeActive(dueWeekLink);
+        displayToDoList('due-week');
+    });
+    const weekListContent = document.createElement('div');
+    weekListContent.setAttribute('id','due-week');
+    weekListContent.classList.add('todo-content');
+    weekListContent.style.display = 'none';
+
 
     menu.appendChild(periodicContainer);
     periodicContainer.appendChild(dueTodayLink);
     periodicContainer.appendChild(dueWeekLink);
+    content.appendChild(todayListContent);
+    content.appendChild(weekListContent);
 };
 const createToDoListMenu = () =>{
     const toDoListMenu = document.createElement('div')

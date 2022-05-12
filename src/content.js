@@ -89,6 +89,7 @@ export const listTaskItems = (item, list) =>{
         deleteParentDiv(listItemDelBtn);
     });
 
+    console.log(toDoListIdentifier);
     // Create the list item
     listToAddTo.appendChild(listItemContainer);
     listItemContainer.appendChild(listItemStatus);
