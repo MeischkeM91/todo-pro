@@ -1,6 +1,6 @@
 // This JS file will contain all application logic, seperate from the interface code
-import { listTaskItems, createAddTaskBtn } from './content';
-import { addDays, isToday, format, isBefore, parseISO } from 'date-fns';
+import { listTaskItems } from './content';
+import { addDays, format, isBefore, parseISO } from 'date-fns';
 
 function deleteParentDiv(e){
     e.parentElement.remove();
@@ -26,7 +26,7 @@ function displayToDoList(listID){
 };
 
 function ToDoItem (title, description, urgency, dueDate, list){
-    return {title,description,urgency,dueDate, list}
+    return {title,description,urgency,dueDate, list};
 };
 const allTasks = [];
 
@@ -37,13 +37,11 @@ function createNewTask(){
     let newTaskDate = document.querySelector('.new-task-date-input');
     let newTaskDesc = document.querySelector('.new-task-desc-input');
     let newTaskList = document.querySelector('.new-task-list-input');
-
     let createdTask = new ToDoItem(newTaskName.value, newTaskDesc.value, newTaskUrg.value.toLowerCase(), newTaskDate.value, newTaskList.value);
-
-    console.log(createdTask);
+    
+    //console.log(createdTask);
     allTasks.push(createdTask);
     listTaskItems(createdTask, createdTask.list);
-    //addToPeriodicList(createdTask);
 };
 
 function loadTodaysTasks(){
@@ -55,7 +53,7 @@ function loadTodaysTasks(){
     const todayFormat = format(today, 'yyyy-MM-dd');
     allTasks.forEach(element => {
         if (todayFormat == element.dueDate){
-            listTaskItems(element, 'due-today')
+            listTaskItems(element, 'due-today');
         };
     });
 };
@@ -68,14 +66,12 @@ function loadWeeksTasks(){
     const today = new Date();
     const nextWeek = addDays(today, 8);
     const nexWeekFormat = parseISO(format(nextWeek, 'yyyy-MM-dd'));
-    console.log(nexWeekFormat); //TESTING
     allTasks.forEach(element => {
         let parsedDate = parseISO(element.dueDate); 
         if (isBefore(parsedDate, nexWeekFormat)){
-            listTaskItems(element, 'due-week')
+            listTaskItems(element, 'due-week');
         };
     });
 };
-
 
 export {deleteParentDiv, makeActive, displayToDoList, createNewTask, loadTodaysTasks, loadWeeksTasks};

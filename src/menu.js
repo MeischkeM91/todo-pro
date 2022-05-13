@@ -5,7 +5,6 @@ const topbar = document.querySelector('#topbar');
 const menu = document.querySelector('#menu');
 const content = document.querySelector('#content');
 
-
 const createNewToDoList = (title) =>{
     let listmenu = document.querySelector('.todo-list-menu');
     const newToDoList = document.createElement('div');
@@ -25,6 +24,7 @@ const createNewToDoList = (title) =>{
     listmenu.appendChild(newToDoList);
     content.appendChild(newToDoListContent);
 };
+
 const createListForm = () =>{
     const newListBg = document.createElement('div');
     newListBg.classList.add('new-list-bg');
@@ -32,15 +32,15 @@ const createListForm = () =>{
     newListContainer.classList.add('new-list-container');
     const newListHeader = document.createElement('h2');
     newListHeader.classList.add('new-list-header');
-    newListHeader.innerText = 'New List Name:'
+    newListHeader.innerText = 'New List Name:';
     const newListInput = document.createElement('input');
     newListInput.type = 'text';
     const addNewListBtn = document.createElement('button');
-    addNewListBtn.innerText = 'Create'
+    addNewListBtn.innerText = 'Create';
     // When Create is clicked, new list is created and added to menu
     addNewListBtn.onclick = function() {
         createNewToDoList(newListInput.value); 
-        deleteParentDiv(newListContainer)
+        deleteParentDiv(newListContainer);
     };
     //this eventListener will close to new list prompt if clicked outside of container
     newListBg.addEventListener('click', (e)=>{
@@ -54,6 +54,7 @@ const createListForm = () =>{
     newListContainer.appendChild(newListInput);
     newListContainer.appendChild(addNewListBtn);
 };
+
 const createNewListBtn = () =>{
     const newListBtn = document.createElement('div');
     newListBtn.classList.add('new-list-btn');
@@ -70,8 +71,7 @@ const createPeriodicList = () =>{
     // Link to display tasks due today
     const dueTodayLink = document.createElement('div');
     dueTodayLink.classList.add('todo-list');
-    //dueTodayLink.classList.add('due-today-link');
-    dueTodayLink.setAttribute('id','due-today-link')
+    dueTodayLink.setAttribute('id','due-today-link');
     dueTodayLink.innerText = 'Today';
     const todayListContent = document.createElement('div');
     todayListContent.setAttribute('id','due-today');
@@ -85,8 +85,7 @@ const createPeriodicList = () =>{
     // Link to display tasks due current week
     const dueWeekLink = document.createElement('div');
     dueWeekLink.classList.add('todo-list');
-    //dueWeekLink.classList.add('due-week-link');
-    dueWeekLink.setAttribute('id','due-week-link')
+    dueWeekLink.setAttribute('id','due-week-link');
     dueWeekLink.innerText = 'Week';
     dueWeekLink.addEventListener('click', ()=>{
         makeActive(dueWeekLink);
@@ -104,8 +103,9 @@ const createPeriodicList = () =>{
     content.appendChild(todayListContent);
     content.appendChild(weekListContent);
 };
+
 const createToDoListMenu = () =>{
-    const toDoListMenu = document.createElement('div')
+    const toDoListMenu = document.createElement('div');
     toDoListMenu.classList.add('todo-list-menu');
     // Projects header
     const toDoHeader = document.createElement('h1');
@@ -124,6 +124,7 @@ const createMenu = () =>{
     createNewToDoList('List One');
     createNewToDoList('List Two');
 };
+
 // Load topbar to page
 export default function loadMenu() {
     createMenu();

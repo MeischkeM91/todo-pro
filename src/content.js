@@ -7,7 +7,6 @@ import { deleteParentDiv, createNewTask } from './logic';
 const menu = document.querySelector('#menu');
 const content = document.querySelector('#content');
 
-
 const createPopout = (item) =>{
     const popContainer = document.createElement('div');
     popContainer.classList.add('todo-item-pop-container');
@@ -65,7 +64,7 @@ export const listTaskItems = (item, list) =>{
     listItemExpandBtn.src = expandBtn;
     listItemExpandBtn.addEventListener('click', () =>{
         createPopout(item);
-    })
+    });
 
     const listItemUrgency = document.createElement('p');
     listItemUrgency.classList.add('list-item-urgency');
@@ -89,7 +88,6 @@ export const listTaskItems = (item, list) =>{
         deleteParentDiv(listItemDelBtn);
     });
 
-    console.log(toDoListIdentifier);
     // Create the list item
     listToAddTo.appendChild(listItemContainer);
     listItemContainer.appendChild(listItemStatus);
@@ -113,11 +111,11 @@ const createAddTaskForm = () =>{
     newTaskNameHead.innerText = 'Task Name:';
     const newTaskNameInput = document.createElement('input');
     newTaskNameInput.type = 'text';
-    newTaskNameInput.classList.add('new-task-name-input')
+    newTaskNameInput.classList.add('new-task-name-input');
     const newTaskInputContainer = document.createElement('div');
     const newTaskUrgContainer = document.createElement('div');
     newTaskUrgContainer.classList.add('new-task-urg');
-    const newTaskUrgHead = document.createElement('p')
+    const newTaskUrgHead = document.createElement('p');
     newTaskUrgHead.innerText = 'Urgency:';
     const newTaskUrgSel = document.createElement('select');
     newTaskUrgSel.classList.add('new-task-urg-input');
@@ -127,7 +125,7 @@ const createAddTaskForm = () =>{
     newTaskUrgLow.innerText = 'Low';
     const newTaskDueContainer = document.createElement('div');
     newTaskDueContainer.classList.add('new-task-due');
-    const newTaskDueHead = document.createElement('p')
+    const newTaskDueHead = document.createElement('p');
     newTaskDueHead.innerText = 'Date Due:';
     const newTaskDueDate = document.createElement('input');
     newTaskDueDate.type = 'date';
@@ -143,11 +141,10 @@ const createAddTaskForm = () =>{
     const toDoListSelArr = document.querySelectorAll('.todo-list');
     const toDoListContainer = document.createElement('div');
     toDoListContainer.classList.add('new-todo-list-sel');
-    const toDoListSelHead = document.createElement('p')
+    const toDoListSelHead = document.createElement('p');
     toDoListSelHead.innerText = 'To-Do List:';
     const toDoListSel= document.createElement('select');
     toDoListSel.classList.add('new-task-list-input');
-
     // This eventListener will create a new task
     addNewTaskBtn.addEventListener('click', ()=>{
         createNewTask();
@@ -195,11 +192,10 @@ export const createAddTaskBtn = () =>{
     addTaskContainer.classList.add('add-task-btn');
     addTaskContainer.addEventListener('click', () =>{
         createAddTaskForm();
-        console.log('add task');
     });
     const addTaskImg = document.createElement('img');
     addTaskImg.src = addBtn;
-    addTaskImg.alt = "Add Task"
+    addTaskImg.alt = "Add Task";
 
     content.appendChild(addTaskContainer);
     addTaskContainer.appendChild(addTaskImg);

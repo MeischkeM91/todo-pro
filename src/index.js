@@ -1,14 +1,13 @@
 import './style.css';
 import loadTopbar from './topbar';
 import loadMenu from './menu';
-import { listTaskItems, createAddTaskBtn } from './content';
+import { createAddTaskBtn } from './content';
 
 
 const loadPage = () =>{
     loadTopbar();
     loadMenu();
     createAddTaskBtn();
-
 }
 
 document.onload =loadPage();
