@@ -182,9 +182,11 @@ const createAddTaskForm = () =>{
     newTaskContainer.appendChild(addNewTaskBtn);
     // Add all list options
     for(let i=0; i<toDoListSelArr.length;i++){
-        const toDoListSelOpt = document.createElement('option');
-        toDoListSelOpt.innerText = toDoListSelArr[i].innerText;
-        toDoListSel.appendChild(toDoListSelOpt);
+        if(toDoListSelArr[i].innerText != 'Today' && toDoListSelArr[i].innerText != 'Week'){
+            const toDoListSelOpt = document.createElement('option');
+            toDoListSelOpt.innerText = toDoListSelArr[i].innerText;
+            toDoListSel.appendChild(toDoListSelOpt);
+        };
     };
 };
 
