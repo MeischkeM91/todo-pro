@@ -1,6 +1,6 @@
 // This JS file will contain all application logic, seperate from the interface code
 import { listTaskItems, createAddTaskBtn } from './content';
-import { addDays, isToday, format, isThisWeek } from 'date-fns';
+import { addDays, isToday, format, isBefore, parseISO } from 'date-fns';
 
 function deleteParentDiv(e){
     e.parentElement.remove();
@@ -60,22 +60,22 @@ function loadTodaysTasks(){
     });
 };
 
-
-
-/* function addToPeriodicList(task){
+function loadWeeksTasks(){
+    // start the list from empty on each load
+    const weekContent = document.querySelector('#due-week');
+    weekContent.innerHTML = '';
+    // run through the array containing every task and display the tasks with current date
     const today = new Date();
-    const todayFormat = format(today, 'yyyy-MM-dd');
-    const nextWeek = addDays(today, 7);
-    const nextWeekFormat = format(nextWeek, 'yyyy-MM-dd');
-    console.log(todayFormat);
-    console.log(nextWeekFormat);
-    console.log(task.dueDate);
-    if(nextWeekFormat < task.dueDate){ // FIX OPERATOR
-        listTaskItems(task, 'due-today');
-        if(todayFormat == task.dueDate){
-            listTaskItems(task, 'due-week');
-        } else return;
-    } else {console.log('ERROR')};
-}; */
+    const nextWeek = addDays(today, 8);
+    const nexWeekFormat = parseISO(format(nextWeek, 'yyyy-MM-dd'));
+    console.log(nexWeekFormat); //TESTING
+    allTasks.forEach(element => {
+        let parsedDate = parseISO(element.dueDate); 
+        if (isBefore(parsedDate, nexWeekFormat)){
+            listTaskItems(element, 'due-week')
+        };
+    });
+};
 
-export {deleteParentDiv, makeActive, displayToDoList, createNewTask, loadTodaysTasks};
+
+export {deleteParentDiv, makeActive, displayToDoList, createNewTask, loadTodaysTasks, loadWeeksTasks};

@@ -1,5 +1,5 @@
 // In this file we will create the Side Menu of our page, including an 'New List' button, 'today'-'week'-'all' tabs, and a list of all To Do lists.
-import { deleteParentDiv, makeActive, displayToDoList, loadTodaysTasks } from "./logic";
+import { deleteParentDiv, makeActive, displayToDoList, loadTodaysTasks, loadWeeksTasks } from "./logic";
 
 const topbar = document.querySelector('#topbar');
 const menu = document.querySelector('#menu');
@@ -91,12 +91,12 @@ const createPeriodicList = () =>{
     dueWeekLink.addEventListener('click', ()=>{
         makeActive(dueWeekLink);
         displayToDoList('due-week');
+        loadWeeksTasks();
     });
     const weekListContent = document.createElement('div');
     weekListContent.setAttribute('id','due-week');
     weekListContent.classList.add('todo-content');
     weekListContent.style.display = 'none';
-
 
     menu.appendChild(periodicContainer);
     periodicContainer.appendChild(dueTodayLink);
