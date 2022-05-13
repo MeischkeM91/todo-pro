@@ -252,8 +252,9 @@
     transform: translate(1px, 1px);
 }
 .new-task-container{
+    color: black;
     font-size: 1.2rem;
-    font-weight: 500;
+    font-weight: 600;
     gap: 3px;
 }
 .new-task-container-head{
@@ -422,8 +423,19 @@
     background-color: var(--moonlit-purple);
 }
 #content.night-moon{
+    color: whitesmoke;
     background-color: var(--deep-midnight);
     box-shadow: inset 1px 0px 6px  #9889AB;
+}
+#content.night-moon .list-item:hover{
+    background-color: var(--midnight-violet);
+}
+#content.night-moon .add-task-btn{
+    background-color: var(--moonlit-purple);
+}
+#content.night-moon .new-task-container, #content.night-moon .new-list-container,#content.night-moon .todo-item-pop-container, #content.night-moon input, #content.night-moon select, #content.night-moon button, #content.night-moon textarea , #menu.night-moon .todo-list.active{
+    background-color: var(--moonlit-purple);
+    color: #1B2129;
 }
 #topbar.night-moon > .username-display{
     background-color: var(--night-pink);
@@ -434,8 +446,12 @@
 #topbar.night-moon  .theme-list{    
     background-color: var(--night-pink);
 }
-#topbar.night-moon  .theme-list:hover{
+#topbar.night-moon  .theme-list:hover,#menu.night-moon .new-list-btn:hover{
     background-color: #d2a7db;
+}
+#menu.night-moon .new-list-btn{
+    border-color: var(--moonlit-purple);
+    background-color: var(--night-pink);
 }
 /**** Lush Forest Theme ****/
 #menu.lush-forest{
@@ -449,6 +465,13 @@
     background-color: var(--lush-green);
     box-shadow: inset 1px 0px 6px  var(--earthy-brown);
 }
+#content.lush-forest .list-item:hover{
+    background-color: #bacc9f;
+}
+#content.lush-forest .new-task-container, #content.lush-forest .new-list-container,#content.lush-forest .todo-item-pop-container, #content.lush-forest input, #content.lush-forest select, #content.lush-forest button, #content.lush-forest textarea , #menu.lush-forest .todo-list.active{
+    background-color: var(--soft-brown);
+    color: #1B2129;
+}
 #topbar.lush-forest > .username-display{
     background-color: var(--lush-green);
 }
@@ -460,4 +483,10 @@
 }
 #topbar.lush-forest .theme-list:hover{
     background-color: #86956f;
+}
+#menu.lush-forest .new-list-btn{
+    border-color: var(--earthy-brown);
+}
+#content.lush-forest .add-task-btn{
+    background-color: var(--soft-brown);
 }
