@@ -43,10 +43,26 @@ function createNewTask(){
     console.log(createdTask);
     allTasks.push(createdTask);
     listTaskItems(createdTask, createdTask.list);
-    addToPeriodicList(createdTask);
+    //addToPeriodicList(createdTask);
 };
 
-function addToPeriodicList(task){
+function loadTodaysTasks(){
+    // start the list from empty on each load
+    const todayContent = document.querySelector('#due-today');
+    todayContent.innerHTML = '';
+    // run through the array containing every task and display the tasks with current date
+    const today = new Date();
+    const todayFormat = format(today, 'yyyy-MM-dd');
+    allTasks.forEach(element => {
+        if (todayFormat == element.dueDate){
+            listTaskItems(element, 'due-today')
+        };
+    });
+};
+
+
+
+/* function addToPeriodicList(task){
     const today = new Date();
     const todayFormat = format(today, 'yyyy-MM-dd');
     const nextWeek = addDays(today, 7);
@@ -60,6 +76,6 @@ function addToPeriodicList(task){
             listTaskItems(task, 'due-week');
         } else return;
     } else {console.log('ERROR')};
-};
+}; */
 
-export {deleteParentDiv, makeActive, displayToDoList, createNewTask};
+export {deleteParentDiv, makeActive, displayToDoList, createNewTask, loadTodaysTasks};
